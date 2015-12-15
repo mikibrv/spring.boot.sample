@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+</head>
+<body>
+
+
+<input placeholder="name" type="text" id="name" name="name"/>
+<button id="greet">Greet</button>
+
+<p id=greeting></p>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+
+    $("#greet").click(function () {
+        var name = $("#name").val();
+        $.post("http://localhost:8080/", {name: name}, function (data) {
+            $("#greeting").html(data);
+        });
+    });
+
+</script>
+
+</html>
